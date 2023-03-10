@@ -1,32 +1,14 @@
-import { Result } from "@/src/interface/api"
-import Image from "next/image"
+import { ResultTop, ResultTrend } from '@/src/interface/api';
+import Card from './Card';
 
-export function Results({results}:{results:Result[]}) {
+export function Results({ results }: { results: ResultTop[] | ResultTrend[] }) {
+	console.log(results);
 
-console.log(results)
-
-  return (
-		<div>
+	return (
+		<div className='sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto py-4'>
 			{results.map((result) => (
-				<div key={result.id}>
-					<h1>{result.title}</h1>
-					<Image
-						src={`https://image.tmdb.org/t/p/original/${
-							result.backdrop_path || result.poster_path
-						}`}
-						width={500}
-						height={300}
-						className='sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200'
-						style={{
-							maxWidth: '100%',
-							height: 'auto',
-						}}
-						placeholder='blur'
-						blurDataURL='/spinner.svg'
-						alt='image is not available'
-					></Image>
-				</div>
+				<Card key={result.id} result={result} />
 			))}
 		</div>
-  );
-  }
+	);
+}
