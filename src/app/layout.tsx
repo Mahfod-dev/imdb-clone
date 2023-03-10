@@ -1,6 +1,7 @@
 import Provider from './Provider'
 import {Header,Navbar} from '../components/Header'
 import './globals.css'
+import SearchBox from '../components/SearchBox/SearchBox'
 
 export const metadata = {
   title: 'IMBD',
@@ -18,6 +19,7 @@ export default function RootLayout({
 				<Provider>
 					<Header />
 					<Navbar />
+					<SearchBox/>
 					{children}
 				</Provider>
 			</body>
