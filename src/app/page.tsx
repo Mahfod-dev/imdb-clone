@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
 	return (
-		<mai>
+		<main>
 			<p className='text-3xl'>mahfod</p>
-		</mai>
+		</main>
 	);
 }
